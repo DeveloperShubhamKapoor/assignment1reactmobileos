@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { OperatingSystem } from './component/Functional';
+
+
 
 function App() {
+
+  let OsObject = [{Os: "Mobile Operating System"},{name:"Android"},{name:"Blackberry"},{name:"Iphone"},{name: "WindowsPhone"}]
+  let Company = [{Os:"Mobile Manufacturers"},{name:"Samsung"},{name:"HTC"},{name:"Micromax"},{name:"Apple"}]
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {OsObject.map((info)=>(
+        <div>
+          <OperatingSystem {...info} />
+        </div>
+      ))}
+      {Company.map((info)=>(
+        <div>
+          <OperatingSystem {...info} />
+        </div>
+      ))}
     </div>
+    
   );
 }
 
